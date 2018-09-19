@@ -1,0 +1,33 @@
+#include <windows.h>
+#include <cstdint>
+#include <stdio.h>
+LARGE_INTEGER freq,st,en; 
+int main()
+{
+	QueryPerformanceFrequency(&freq);
+	QueryPerformanceCounter(&st);
+	uint64_t *to = new uint64_t[ 8* 100LL* 1000LL* 1000LL ];
+	uint64_t *fm = new uint64_t[ 8* 100LL* 1000LL* 1000LL ];
+	for ( int k=0; k < 100 ; k++ )
+	{
+		for ( int j=0; j < 1000 ; j++ )
+		{
+			for ( int i=0; i < 1000 ; i++ )
+			{
+//				memcpy( to+=8, fm+=8, 64 );
+				*to++=*fm++;
+				*to++=*fm++;
+				*to++=*fm++;
+				*to++=*fm++;
+				*to++=*fm++;
+				*to++=*fm++;
+				*to++=*fm++;
+				*to++=*fm++;
+			}
+		}
+	}
+	QueryPerformanceCounter(&en);
+	double time = (double)(en.QuadPart-st.QuadPart) / (double)freq.QuadPart;
+	printf("time:%fsec\n",time );
+	return 0;
+}

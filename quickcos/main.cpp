@@ -42,17 +42,17 @@ void run_loop( const char* str, int n, float (*func_cos)(float) )
 }
 int main()
 {
-	printf("deg cos()    cos2()\n" );
+	printf("deg : cosf()   :cos2()    :cos3()    \n" );
+	printf("----+----------+----------+----------\n" );
 	for ( int i = 0 ; i <= 90 ; i+=5 )
 	{
 		float	r = i*3.14f/180.0f;
 		float	a = cosf(r);
 		float	b = cos2(r);
 		float	c = cos3(r);
-		float	d = cos4(i);
-//		printf("%3d %f %f %f \n", i, a,b,c );
-		printf("%3d %f %f %f %f \n", i, a,b,c,d );
+		printf("%3d : %f : %f : %f \n", i, a,b,c );
 	}
+	printf("-------------------------------------\n" );
 
 
 	int	loops = 1000*1000*1;

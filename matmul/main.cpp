@@ -64,7 +64,15 @@ inline void	matmul_d( double* m, double* a, double* b, int loop  )
 
 int main( int argc, char* argv[] )
 {
-	if ( argc > 1 ) tmax = atoi(argv[1]);
+	if ( argc <=1 || atoi(argv[1]) == 0 ) 
+	{
+		printf("%s.exex:using..\n",argv[0] );
+		printf(">%s n    n:thread number\n",argv[0] );
+		exit(0);
+	}
+
+
+	tmax = atoi(argv[1]);
 	int size = LOOP / tmax;
 	printf("size %dx%d(thread)\n",size,tmax );
 
@@ -72,7 +80,6 @@ int main( int argc, char* argv[] )
   	for ( int i=0 ; i <tmax ; i++ )
 	{
 		list.push_back( new thread(matmul,  (float*)&mr[size*i],  (float*)&ma[size*i], (float*)&mb[size*i], size  ) );
-//		list.push_back( new thread(matmul_d,  (double*)&mr[size*i],  (double*)&ma[size*i], (double*)&mb[size*i], size  ) );
 	}
 	for ( const auto& t : list )
 	{

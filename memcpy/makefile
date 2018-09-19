@@ -1,7 +1,7 @@
-﻿FLAGS=-g -m64 -std=c++14 -c -g -Wno-narrowing -fpermissive -Werror
+﻿FLAGS=-g -m64 -O3 -std=c++14 -Wno-narrowing -fpermissive -Werror
 
 main.exe	: main.cpp
-	clang++ -O2 -m64 -std=c++11 main.cpp -o main.exe
+	clang++ $(FLAGS) main.cpp -o main.exe
 
 clean:
 	rm main.exe -f

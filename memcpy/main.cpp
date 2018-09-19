@@ -20,7 +20,14 @@ inline void func( int id, uint64_t* to, uint64_t* fm, int loop )
 }
 int main( int argc, char* argv[] )
 {
-	if ( argc > 1 ) tmax = atoi(argv[1]);
+	if ( argc <=1 || atoi(argv[1]) == 0 ) 
+	{
+		printf("memcopy x 1Mtimes.\n",argv[0] );
+		printf(">%s n    n:thread number\n",argv[0] );
+		exit(0);
+	}
+
+	tmax = atoi(argv[1]);
 	int size = LOOP / tmax;
 	printf("size %dx%d(thread)\n",size,tmax );
 

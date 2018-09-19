@@ -1,10 +1,7 @@
-﻿FLAGS=-g -m64 -std=c++11
+﻿FLAGS=-m64 -std=c++14 -O3
 
 main.exe	: main.cpp
-	clang++ -O2 $(FLAGS) main.cpp -o main.exe
-
-main_win32	: main_win32
-	clang++ -O2 $(FLAGS) main_win32.cpp -o main_win32.exe
+	clang++ $(FLAGS) main.cpp -o main.exe
 
 clean:
 	rm main.exe -f

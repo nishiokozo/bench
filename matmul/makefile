@@ -1,7 +1,7 @@
 ﻿FLAGS=-m64 -std=c++14 -O3
 
 main.exe	: main.cpp
-	clang++ $(FLAGS) main.cpp -o main.exe
+	g++ $(FLAGS) main.cpp -o main.exe
 
 clean:
 	rm main.exe -f

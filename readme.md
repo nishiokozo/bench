@@ -8,4 +8,4 @@ memcpy:
 	uint64_t[8] x 100万回コピー
 
 vectmul: 
-	operator*()によるベクトル乗算速度比較
+	operator*()によるベクトル乗算x 100万回 速度比較

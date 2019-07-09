@@ -19,7 +19,7 @@ int main()
   vect2 p(1.2,2.3);
  
   time_a= chrono::system_clock::now(); 
-  for ( int i=0 ; i < 10000 ; i++ )
+  for ( int i=0 ; i < 20000 ; i++ )
   {
     p.x=p.x*2;p.y=p.y*2;  p.x=p.x*2;p.y=p.y*2;  p.x=p.x*2;p.y=p.y*2;  p.x=p.x*2;p.y=p.y*2;  p.x=p.x*2;p.y=p.y*2;
     p.x=p.x*2;p.y=p.y*2;  p.x=p.x*2;p.y=p.y*2;  p.x=p.x*2;p.y=p.y*2;  p.x=p.x*2;p.y=p.y*2;  p.x=p.x*2;p.y=p.y*2;
@@ -37,7 +37,7 @@ int main()
   if ( p.x || p.y ) cout << "a) " << f << " msec" << endl;
 
   time_a= chrono::system_clock::now(); 
-  for ( int i=0 ; i < 10000 ; i++ )
+  for ( int i=0 ; i < 20000 ; i++ )
   {
     p=p*2;  p=p*2;  p=p*2;  p=p*2;  p=p*2;
     p=p*2;  p=p*2;  p=p*2;  p=p*2;  p=p*2;

@@ -37,7 +37,7 @@ int main()
   }
   time_b= chrono::system_clock::now(); 
   f= chrono::duration_cast<chrono::microseconds>(time_b-time_a).count();
-  if ( p.x || p.y ) cout << "a) " << f << " msec" << endl;
+  if ( p.x || p.y ) cout << "a) " << f << " usec" << endl;
 
   time_a= chrono::system_clock::now(); 
   for ( int i=0 ; i < 20000 ; i++ )
@@ -55,6 +55,6 @@ int main()
   }
   time_b= chrono::system_clock::now(); 
   f= chrono::duration_cast<chrono::microseconds>(time_b-time_a).count();
-  if ( p.x || p.y ) cout << "b) " << f << " msec"  << endl;
+  if ( p.x || p.y ) cout << "b) " << f << " usec"  << endl;
 
 }

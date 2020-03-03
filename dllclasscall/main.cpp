@@ -17,7 +17,7 @@ int main()
 	DEF  GetInstance = (DEF)::GetProcAddress(hdl, "GetInstance");
 	Foo * foo =  GetInstance();
 
-	typedef int (*DEF_B)(void);
+	typedef void (*DEF_B)(void);
 	DEF_B  func_b = (DEF_B)::GetProcAddress(hdl, "func_b");
 
 	int64_t loop = 2000000000;	// 20億回	

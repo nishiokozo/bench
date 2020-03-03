@@ -9,3 +9,6 @@ memcpy:
 
 vectmul: 
 	operator*()によるベクトル乗算x 100万回 速度比較
+
+dllclasscall
+	.dll 中の二つの関数、a)class関数とb)通常関数の速度比較
